@@ -19,8 +19,8 @@ function App() {
           <Route path="/movies" element={<MoviesPage />} />
           <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
             {/* Вкладені маршрути для Cast і Reviews */}
-            <Route path="cast" element={<MovieCast />} />
-            <Route path="reviews" element={<MovieReviews />} />
+            <Route path="/movies/:movieId/cast" element={<MovieCast />} />
+            <Route path="/movies/:movieId/reviews" element={<MovieReviews />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

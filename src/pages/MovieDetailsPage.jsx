@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import { useParams, useNavigate, useLocation, Link, Outlet } from 'react-router-dom';
 import axios from 'axios';
 
 function MovieDetailsPage() {
@@ -39,7 +39,11 @@ function MovieDetailsPage() {
         <>
           <h1>{movie.title}</h1>
           <p>{movie.overview}</p>
-          {/* Other movie details */}
+          <nav>
+            <Link to="cast" state={{ from: location.state?.from }}>Cast</Link>
+            <Link to="reviews" state={{ from: location.state?.from }}>Reviews</Link>
+          </nav>
+          <Outlet />
         </>
       )}
     </div>
